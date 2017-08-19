@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>  
+ <title>Churn Data Dash</title>
+ <script type="text/javascript">
+window.onload = function () {
+  var chart1 = new CanvasJS.Chart("chartContainer",
+  {
+    title:{
+      text: "How my time is spent in a week?",
+      fontFamily: "arial black"
+    },
+                animationEnabled: true,
+    legend: {
+      verticalAlign: "bottom",
+      horizontalAlign: "center"
+    },
+    theme: "theme1",
+    data: [
+    {        
+      type: "pie",
+      indexLabelFontFamily: "Garamond",       
+      indexLabelFontSize: 20,
+      indexLabelFontWeight: "bold",
+      startAngle:0,
+      indexLabelFontColor: "MistyRose",       
+      indexLabelLineColor: "darkgrey", 
+      indexLabelPlacement: "inside", 
+      toolTipContent: "{name}: {y}hrs",
+      showInLegend: true,
+      indexLabel: "#percent%", 
+      dataPoints: [
+        {  y: 52, name: "Time At Work", legendMarkerType: "triangle"},
+        {  y: 44, name: "Time At Home", legendMarkerType: "square"},
+        {  y: 12, name: "Time Spent Out", legendMarkerType: "circle"}
+      ]
+    }
+    ]
+  });
+  chart.render();
+
+    var chart2 = new CanvasJS.Chart("chartContainer1",
+    {
+      title:{
+        text: "Recod count of data from States "    
+      },
+      animationEnabled: true,
+      axisY: {
+        title: "Counts of call records"
+      },
+      legend: {
+        verticalAlign: "bottom",
+        horizontalAlign: "center"
+      },
+      theme: "theme2",
+      data: [
+
+      {        
+        type: "column",  
+        showInLegend: true, 
+        legendMarkerColor: "grey",
+        legendText: "States of USA",
+        dataPoints: [      
+        {label: "AK", y:72},
+        {label: "AL", y:124},
+        {label: "AR", y:92},
+        {label: "AZ", y:89},
+        {label: "CA", y:52},
+        {label: "CO", y:96},
+        {label: "CT", y:99},
+        {label: "DC", y:88},
+        {label: "DE", y:94},
+        {label: "FL", y:90},
+        {label: "GA", y:83},
+        {label: "HI", y:86},
+        {label: "IA", y:69},
+        {label: "ID", y:119},
+        {label: "IL", y:88},
+        {label: "IN", y:98},
+        {label: "KS", y:99},
+        {label: "KY", y:99},
+        {label: "LA", y:82},
+        {label: "MA", y:103},
+        {label: "MD", y:102},
+        {label: "ME", y:103},
+        {label: "MI", y:103},
+        {label: "MN", y:125},
+        {label: "MO", y:93},
+        {label: "MS", y:99},
+        {label: "MT", y:99},
+        {label: "NC", y:91},
+        {label: "ND", y:88},
+        {label: "NE", y:88},
+        {label: "NH", y:95},
+        {label: "NJ", y:112},
+        {label: "NM", y:91},
+        {label: "NV", y:90},
+        {label: "NY", y:114},
+        {label: "OH", y:116},
+        {label: "OK", y:90},
+        {label: "OR", y:114},
+        {label: "PA", y:77},
+        {label: "RI", y:99},
+        {label: "SC", y:91},
+        {label: "SD", y:85},
+        {label: "TN", y:89},
+        {label: "TX", y:116},
+        {label: "UT", y:112},
+        {label: "VA", y:118},
+        {label: "VT", y:101},
+        {label: "WA", y:98},
+        {label: "WI", y:106},
+        {label: "WV", y:158},
+        {label: "WY", y:115},
+        ]
+      }   
+      ]
+    });
+
+    chart2.render();
+  }
+  </script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</head>
+  <body>
+  <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+  
+  <div id="chartContainer1" style="height: 500px; width: 100%;"></div>
+  </body>
+</html>

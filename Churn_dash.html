@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>  
+ <title>Churn Data Dash</title>
+ <script type="text/javascript">
+window.onload = function () {
+  var chart = new CanvasJS.Chart("piechartContainer",
+  {
+    title:{
+      text: "Total Churners Vs Non-Churners",
+      fontFamily: "arial black"
+    },
+                animationEnabled: true,
+    legend: {
+      verticalAlign: "bottom",
+      horizontalAlign: "center"
+    },
+    theme: "theme2",
+    data: [
+    {        
+      type: "pie",
+      indexLabelFontFamily: "Garamond",       
+      indexLabelFontSize: 20,
+      indexLabelFontWeight: "bold",
+      startAngle:0,
+      indexLabelFontColor: "MistyRose",       
+      indexLabelLineColor: "darkgrey", 
+      indexLabelPlacement: "inside", 
+      toolTipContent: "{name}: {y}hrs",
+      showInLegend: true,
+      indexLabel: "#percent%", 
+      dataPoints: [
+        {  y: 4293, name: "False -> Non-Churners", legendMarkerType: "triangle"},
+        {  y: 707, name: "True -> Churners", legendMarkerType: "square"},
+        // {  y: 12, name: "Time Spent Out", legendMarkerType: "circle"}
+      ]
+    }
+    ]
+  });
+  chart.render();
+
+    var chart2 = new CanvasJS.Chart("barchartContainer1",
+    {
+      title:{
+        text: "Recod count of data from States "    
+      },
+      animationEnabled: true,
+      axisY: {
+        title: "Counts of call records"
+      },
+      legend: {
+        verticalAlign: "bottom",
+        horizontalAlign: "center"
+      },
+      theme: "theme2",
+      data: [
+
+      {        
+        type: "column",  
+        showInLegend: true, 
+        legendMarkerColor: "grey",
+        legendText: "States of USA",
+        dataPoints: [      
+        {label: "AK", y:72},
+        {label: "AL", y:124},
+        {label: "AR", y:92},
+        {label: "AZ", y:89},
+        {label: "CA", y:52},
+        {label: "CO", y:96},
+        {label: "CT", y:99},
+        {label: "DC", y:88},
+        {label: "DE", y:94},
+        {label: "FL", y:90},
+        {label: "GA", y:83},
+        {label: "HI", y:86},
+        {label: "IA", y:69},
+        {label: "ID", y:119},
+        {label: "IL", y:88},
+        {label: "IN", y:98},
+        {label: "KS", y:99},
+        {label: "KY", y:99},
+        {label: "LA", y:82},
+        {label: "MA", y:103},
+        {label: "MD", y:102},
+        {label: "ME", y:103},
+        {label: "MI", y:103},
+        {label: "MN", y:125},
+        {label: "MO", y:93},
+        {label: "MS", y:99},
+        {label: "MT", y:99},
+        {label: "NC", y:91},
+        {label: "ND", y:88},
+        {label: "NE", y:88},
+        {label: "NH", y:95},
+        {label: "NJ", y:112},
+        {label: "NM", y:91},
+        {label: "NV", y:90},
+        {label: "NY", y:114},
+        {label: "OH", y:116},
+        {label: "OK", y:90},
+        {label: "OR", y:114},
+        {label: "PA", y:77},
+        {label: "RI", y:99},
+        {label: "SC", y:91},
+        {label: "SD", y:85},
+        {label: "TN", y:89},
+        {label: "TX", y:116},
+        {label: "UT", y:112},
+        {label: "VA", y:118},
+        {label: "VT", y:101},
+        {label: "WA", y:98},
+        {label: "WI", y:106},
+        {label: "WV", y:158},
+        {label: "WY", y:115},
+        ]
+      }   
+      ]
+    });
+
+    chart2.render();
+
+    var chart3 = new CanvasJS.Chart("horizontalbarchartContainer", {
+    title:{
+      text:"Statewise Churners Vs Non-Churners"
+    },
+                animationEnabled: true,
+    axisX:{
+      interval: 1,
+      labelFontSize: 10,
+      lineThickness: 0
+    },
+    axisY2:{
+      valueFormatString: "$ 0",
+      lineThickness: 0        
+    },
+    toolTip: {
+      shared: true
+    },
+    legend:{
+      verticalAlign: "top",
+      horizontalAlign: "center"
+    },
+
+    data: [
+    {     
+      type: "stackedBar",
+      showInLegend: true,
+      name: "False (500gms)",
+      axisYType: "secondary",
+      color: "#7E8F74",
+      dataPoints: [
+          {label: "AK", y: 67},
+          {label: "AL", y: 111},
+          {label: "AR", y: 76},
+          {label: "AZ", y: 80},
+          {label: "CA", y: 38},
+          {label: "CO", y: 85},
+          {label: "CT", y: 83},
+          {label: "DC", y: 79},
+          {label: "DE", y: 79},
+          {label: "FL", y: 78},
+          {label: "GA", y: 73},
+          {label: "HI", y: 81},
+          {label: "IA", y: 61},
+          {label: "ID", y: 105},
+          {label: "IL", y: 81},
+          {label: "IN", y: 84},
+          {label: "KS", y: 81},
+          {label: "KY", y: 84},
+          {label: "LA", y: 75},
+          {label: "MA", y: 86},
+          {label: "MD", y: 81},
+          {label: "ME", y: 84},
+          {label: "MI", y: 85},
+          {label: "MN", y: 105},
+          {label: "MO", y: 81},
+          {label: "MS", y: 82},
+          {label: "MT", y: 78},
+          {label: "NC", y: 79},
+          {label: "ND", y: 78},
+          {label: "NE", y: 82},
+          {label: "NH", y: 83},
+          {label: "NJ", y: 84},
+          {label: "NM", y: 81},
+          {label: "NV", y: 73},
+          {label: "NY", y: 94},
+          {label: "OH", y: 101},
+          {label: "OK", y: 74},
+          {label: "OR", y: 96},
+          {label: "PA", y: 69},
+          {label: "RI", y: 92},
+          {label: "SC", y: 75},
+          {label: "SD", y: 73},
+          {label: "TN", y: 75},
+          {label: "TX", y: 90},
+          {label: "UT", y: 96},
+          {label: "VA", y: 112},
+          {label: "VT", y: 91},
+          {label: "WA", y: 74},
+          {label: "WI", y: 98},
+          {label: "WV", y: 136},
+          {label: "WY", y: 104}
+        // {y: 3, label: "India"},
+        // {y: 5, label: "US" },
+        // {y: 3, label: "Germany"   },      
+        // {y: 6, label: "Brazil"  },      
+        // {y: 7, label: "China"  },
+        // {y: 5, label: "Australia"  },
+        // {y: 5, label: "France"  },
+        // {y: 7, label: "Italy"  },
+        // {y: 9, label: "Singapore"  },
+        // {y: 8, label: "Switzerland"  },
+        // {y: 12, label: "Japan"  }
+      ]
+    },
+    {     
+      type: "stackedBar",
+      showInLegend: true,
+      name: "True (1kg)",
+      axisYType: "secondary",
+      color: "#F0E6A7",
+      dataPoints: [
+        {label: "AK", y: 5},
+        {label: "AL", y: 13},
+        {label: "AR", y: 16},
+        {label: "AZ", y: 9},
+        {label: "CA", y: 14},
+        {label: "CO", y: 11},
+        {label: "CT", y: 16},
+        {label: "DC", y: 9},
+        {label: "DE", y: 15},
+        {label: "FL", y: 12},
+        {label: "GA", y: 10},
+        {label: "HI", y: 5},
+        {label: "IA", y: 8},
+        {label: "ID", y: 14},
+        {label: "IL", y: 7},
+        {label: "IN", y: 14},
+        {label: "KS", y: 18},
+        {label: "KY", y: 15},
+        {label: "LA", y: 7},
+        {label: "MA", y: 17},
+        {label: "MD", y: 21},
+        {label: "ME", y: 19},
+        {label: "MI", y: 18},
+        {label: "MN", y: 20},
+        {label: "MO", y: 12},
+        {label: "MS", y: 17},
+        {label: "MT", y: 21},
+        {label: "NC", y: 12},
+        {label: "ND", y: 10},
+        {label: "NE", y: 6},
+        {label: "NH", y: 12},
+        {label: "NJ", y: 28},
+        {label: "NM", y: 10},
+        {label: "NV", y: 17},
+        {label: "NY", y: 20},
+        {label: "OH", y: 15},
+        {label: "OK", y: 16},
+        {label: "OR", y: 18},
+        {label: "PA", y: 8},
+        {label: "RI", y: 7},
+        {label: "SC", y: 16},
+        {label: "SD", y: 12},
+        {label: "TN", y: 14},
+        {label: "TX", y: 26},
+        {label: "UT", y: 16},
+        {label: "VA", y: 6},
+        {label: "VT", y: 10},
+        {label: "WA", y: 24},
+        {label: "WI", y: 8},
+        {label: "WV", y: 22},
+        {label: "WY", y: 11}
+        // {y: .5, label: "India" },
+        // {y: 1.5, label: "US" },
+        // {y: 1, label: "Germany"   },      
+        // {y: 2, label: "Brazil"  },      
+        // {y: 2, label: "China"  },
+        // {y: 2.5, label: "Australia"  },
+        // {y: 1.5, label: "France"  },
+        // {y: 1, label: "Italy"  },
+        // {y: 2, label: "Singapore"  },
+        // {y: 2, label: "Switzerland"  },
+        // {y: 3, label: "Japan"  }
+      ]
+    }
+    // {     
+    //   type: "stackedBar",
+    //   showInLegend: true,
+    //   name: "Milk (2l)",
+    //   axisYType: "secondary",
+    //   color: "#EBB88A",
+    //   dataPoints: [
+    //     {y: 2, label: "India" },
+    //     {y: 3, label: "US" },
+    //     {y: 3, label: "Germany"   },      
+    //     {y: 3, label: "Brazil"  },      
+    //     {y: 4, label: "China"  },
+    //     {y: 3, label: "Australia"  },
+    //     {y: 4.5, label: "France"  },
+    //     {y: 4.5, label: "Italy"  },
+    //     {y: 6, label: "Singapore"  },
+    //     {y: 3, label: "Switzerland"  },
+    //     {y: 6, label: "Japan"  }
+    //   ]
+    // },
+    // {
+    //   type: "stackedBar",
+    //   showInLegend: true,
+    //   name: "Eggs (20)",
+    //   axisYType: "secondary",
+    //   color:"#DB9079",
+    //   indexLabel: "$#total",
+    //   dataPoints: [
+    //     {y: 2, label: "India" },
+    //     {y: 3, label: "US" },
+    //     {y: 6, label: "Germany"   },      
+    //     {y: 4, label: "Brazil"  },      
+    //     {y: 4, label: "China"  },
+    //     {y: 8, label: "Australia"  },
+    //     {y: 8, label: "France"  },
+    //     {y: 8, label: "Italy"  },
+    //     {y: 4, label: "Singapore"  },
+    //     {y: 11, label: "Switzerland"  },
+    //     {y: 6, label: "Japan"  }
+    //   ]
+    // }
+    ]
+    });
+  chart3.render();
+  }
+  </script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</head>
+  <body>
+  <div id="piechartContainer" style="height: 400px; width: 100%;"></div>
+  
+  <div id="barchartContainer1" style="height: 500px; width: 100%;"></div>
+
+  <div id="horizontalbarchartContainer" style="height: 600px; width: 100%;"></div>
+
+  </body>
+</html>
